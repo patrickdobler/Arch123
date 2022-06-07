@@ -81,7 +81,6 @@ python-notify2
 python-psutil
 python-pyqt5
 python-pip
-qemu
 snap-pac
 snapper
 steam
