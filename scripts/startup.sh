@@ -209,13 +209,27 @@ keymap () {
 echo -ne "
 Please select key board layout from this list"
 # These are default key maps as presented in official arch repo archinstall
-options=(us by ca cf ch cz de dk es et fa fi fr gr hu il it lt lv mk nl no pl ro ru sg ua uk)
+options=(us by ca cf cz de de_CH-latin1 dk es et fa fi fr gr hu il it lt lv mk nl no pl ro ru sg ua uk)
 
 select_option $? 4 "${options[@]}"
 keymap=${options[$?]}
 
 echo -ne "Your key boards layout: ${keymap} \n"
 set_option KEYMAP $keymap
+}
+
+# @description Set user's locale settings. 
+localesetting () {
+echo -ne "
+Please select locale setting from this list (regional monetary values, time and date formats)"
+# These are default locale settings as presented in official arch repo archinstall
+options=("en_US" "de_CH")
+
+select_option $? 1 "${options[@]}"
+localesetting=${options[$?]}
+
+echo -ne "Your locale: ${localesetting} \n"
+set_option LOCALESETTING $localesetting
 }
 
 # @description Choose whether drive is SSD or not.
