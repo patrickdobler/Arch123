@@ -1,16 +1,9 @@
-mesa
-xorg
+mesa-utils
 xorg-server
-xorg-apps
-xorg-drivers
-xorg-xkill
 xorg-xinit
-xterm
-binutils
-dosfstools
+xorg-xinput
 linux-headers
 noto-fonts-emoji
-usbutils
 xdg-user-dirs
 --END OF MINIMAL INSTALL--
 alsa-plugins
