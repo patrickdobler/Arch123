@@ -216,7 +216,6 @@ keymap=${options[$?]}
 
 echo -ne "Your key boards layout: ${keymap} \n"
 set_option KEYMAP $keymap
-esac
 }
 
 # @description Set user's locale settings. 
