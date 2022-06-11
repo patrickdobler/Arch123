@@ -52,14 +52,19 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+if [[  $LOCALESETTING == "de_CH" ]]; then
+  sed -i 's/^#de_CH.UTF-8 UTF-8/de_CH.UTF-8 UTF-8/' /etc/locale.gen
+fi
 locale-gen
 timedatectl --no-ask-password set-timezone ${TIMEZONE}
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_ADDRESS="${LOCALESETTING}.UTF-8" LC_IDENTIFICATION="${LOCALESETTING}.UTF-8" LC_MEASUREMENT="${LOCALESETTING}.UTF-8" LC_MONETARY="${LOCALESETTING}.UTF-8" LC_NAME="${LOCALESETTING}.UTF-8" LC_NUMERIC="${LOCALESETTING}.UTF-8" LC_PAPER="${LOCALESETTING}.UTF-8" LC_TELEPHONE="${LOCALESETTING}.UTF-8" LC_TIME="${LOCALESETTING}.UTF-8"
 ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 # Set keymaps
-localectl --no-ask-password set-keymap ${KEYMAP}
-
+localectl --no-ask-password set-keymap ${KEYMAP} --no-convert
+if [[  $LOCALESETTING == "de_CH" ]]; then
+  localectl --no-ask-password set-x11-keymap ch --no-convert
+fi
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
@@ -135,7 +140,7 @@ echo -ne "
 # Graphics Drivers find and install
 gpu_type=$(lspci)
 if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
-    pacman -S --noconfirm --needed nvidia
+    pacman -S --noconfirm --needed nvidia nvidia-utils
 	nvidia-xconfig
 elif lspci | grep 'VGA' | grep -E "Radeon|AMD"; then
     pacman -S --noconfirm --needed xf86-video-amdgpu

@@ -85,6 +85,11 @@ else
   if [[ ! "${DESKTOP_ENV}" == "server"  ]]; then
   sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter
   systemctl enable lightdm.service
+  # Set default lightdm greeter to lightdm-webkit2-greeter
+  sed -i 's/#greeter-session=example.*/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
+  # Set default lightdm-webkit2-greeter theme to Glorious
+  sudo sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = glorious #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
+  sudo sed -i 's/^debug_mode\s*=\s*\(.*\)/debug_mode = true #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
   fi
 fi
 
@@ -136,7 +141,7 @@ PLYMOUTH_THEME="arch-glow" # can grab from config later if we allow selection
 mkdir -p /usr/share/plymouth/themes
 echo 'Installing Plymouth theme...'
 cp -rf ${PLYMOUTH_THEMES_DIR}/${PLYMOUTH_THEME} /usr/share/plymouth/themes
-if  [[ ${FS} == "luks"]]; then
+if  [[ ${FS} == "luks" ]]; then
   sed -i 's/HOOKS=(base udev*/& plymouth/' /etc/mkinitcpio.conf # add plymouth after base udev
   sed -i 's/HOOKS=(base udev \(.*block\) /&plymouth-/' /etc/mkinitcpio.conf # create plymouth-encrypt after block hook
 else

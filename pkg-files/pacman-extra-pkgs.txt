@@ -1,1 +1,8 @@
+dkms
+nvidia-dkms
+lightdm-webkit2-greeter
+pipewire
+pipewire-media-session
+pipewire-pulse
+bash-completion
 --END OF MINIMAL INSTALL--

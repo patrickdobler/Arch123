@@ -1,10 +1,20 @@
 mesa-utils
+xorg
 xorg-server
 xorg-xinit
 xorg-xinput
+xorg-xfontsel
+xorg-xlsfonts
+xorg-xwininfo
 linux-headers
 noto-fonts-emoji
 xdg-user-dirs
+openssh
+htop
+neofetch
+smartmontools
+xdg-utils
+ntp
 --END OF MINIMAL INSTALL--
 alsa-plugins
 alsa-utils
@@ -67,16 +77,12 @@ patch
 picom
 pkgconf
 powerline-fonts
-pulseaudio
-pulseaudio-alsa
-pulseaudio-bluetooth
 python-notify2
 python-psutil
 python-pyqt5
 python-pip
 snap-pac
 snapper
-steam
 swtpm
 synergy
 terminus-font

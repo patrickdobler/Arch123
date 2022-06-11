@@ -1,3 +1,5 @@
+lightdm-webkit2-theme-glorious
+plymouth-git
 --END OF MINIMAL INSTALL--
 autojump
 brave-bin
@@ -9,7 +11,6 @@ nordic-darker-standard-buttons-theme
 nordic-darker-theme
 nordic-theme
 ocs-url
-plymouth-git
 snapper-gui-git
 ttf-meslo
 vde2

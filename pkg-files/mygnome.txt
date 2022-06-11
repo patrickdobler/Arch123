@@ -1,4 +1,0 @@
-gnome
---END OF MINIMAL INSTALL--
-gnome-tweaks
-gnome-tweak-tool
