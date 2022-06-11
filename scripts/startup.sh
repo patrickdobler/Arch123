@@ -360,3 +360,4 @@ timezone
 clear
 logo
 keymap
+localesetting
