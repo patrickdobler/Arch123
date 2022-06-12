@@ -1,16 +1,17 @@
-lightdm-webkit2-theme-glorious
-plymouth-git
+lightdm-webkit2-theme-glorious #login_theme
+plymouth-git #boot_logo
+nerd-fonts-fira-code #zsh
+ttf-meslo #zsh
+autojump #zsh
+zsh-you-should-use
+snapper-gui-git #snapshot_tool
 --END OF MINIMAL INSTALL--
-autojump
 brave-bin
 bridge-utils
 dxvk-bin
 lightly-git
-nerd-fonts-fira-code
 nordic-darker-standard-buttons-theme
 nordic-darker-theme
 nordic-theme
 ocs-url
-snapper-gui-git
-ttf-meslo
 vde2

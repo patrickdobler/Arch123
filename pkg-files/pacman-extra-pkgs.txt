@@ -1,8 +1,13 @@
 dkms
 nvidia-dkms
-lightdm-webkit2-greeter
-pipewire
-pipewire-media-session
-pipewire-pulse
-bash-completion
+lightdm-webkit2-greeter #login_theme
+pipewire #audio
+pipewire-media-session #audio
+pipewire-pulse #audio
+unrar
+zsh
+zsh-syntax-highlighting
+zsh-autosuggestions
+firefox
 --END OF MINIMAL INSTALL--
+bash-completion

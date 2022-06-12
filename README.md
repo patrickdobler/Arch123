@@ -1,7 +1,15 @@
+# Work in Progress
+
+This installation script is based on ArchTitus and was modified for own preferences. The goal is a lightweight Arch OS but with modern traits, which is why this script focuses mainly on Budgie. Enhancements are mainly language and keyboard settings.
+
+Desktop Environment: Budgie 10.6.1
+Display Manager: LightDM
+Grub Theme: Dark Matter - https://github.com/VandalByte/darkmatter-grub2-theme
+LightDM Theme: glorious - https://github.com/manilarome/lightdm-webkit2-theme-glorious
+
+
 # ArchTitus Installer Script
 [![GitHub Super-Linter](https://github.com/ChrisTitusTech/ArchTitus/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-
-<img src="https://i.imgur.com/YiNMnan.png" />
 
 This README contains the steps I do to install and configure a fully-functional Arch Linux installation containing a desktop environment, all the support packages (network, bluetooth, audio, printers, etc.), along with all my preferred applications and utilities. The shell scripts in this repo allow the entire process to be automated.)
 

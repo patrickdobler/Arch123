@@ -109,8 +109,8 @@ systemctl stop dhcpcd.service
 echo "  DHCP stopped"
 systemctl enable NetworkManager.service
 echo "  NetworkManager enabled"
-systemctl enable bluetooth
-echo "  Bluetooth enabled"
+#systemctl enable bluetooth
+#echo "  Bluetooth enabled"
 systemctl enable avahi-daemon.service
 echo "  Avahi enabled"
 
@@ -152,6 +152,19 @@ echo 'Plymouth theme installed'
 
 echo -ne "
 -------------------------------------------------------------------------
+               Remove other DE sessions
+-------------------------------------------------------------------------
+"
+if [[ ${DESKTOP_ENV} == "budgie" ]]; then
+  echo 'Removing alternative gnome sessions...'
+  cd /usr/share/wayland-sessions/
+  rm gnome-classic.desktop gnome-classic-wayland.desktop gnome.desktop gnome-wayland.desktop
+  cd /usr/share/xsessions/
+  rm gnome-classic.desktop gnome-classic-xorg.desktop gnome.desktop gnome-xorg.desktop
+fi
+
+echo -ne "
+-------------------------------------------------------------------------
                     Cleaning
 -------------------------------------------------------------------------
 "
@@ -164,6 +177,9 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 rm -r $HOME/Arch123
 rm -r /home/$USERNAME/Arch123
+
+# Change default shell
+chsh -s /bin/zsh
 
 # Replace in the same state
 cd $pwd

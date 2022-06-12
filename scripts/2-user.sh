@@ -16,16 +16,16 @@ echo -ne "
                         SCRIPTHOME: ArchTitus
 -------------------------------------------------------------------------
 
-Installing AUR Softwares
+Installing AUR Softwares and Terminal Theme
 "
 source $HOME/Arch123/configs/setup.conf
 
   cd ~
   mkdir "/home/$USERNAME/.cache"
   touch "/home/$USERNAME/.cache/zshhistory"
-  git clone "https://github.com/ChrisTitusTech/zsh"
+  git clone "https://github.com/patrickdobler/zsh"
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-  ln -s "~/zsh/.zshrc" ~/.zshrc
+  cp ~/zsh/.zshrc ~/.zshrc
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/Arch123/pkg-files/${DESKTOP_ENV}.txt | while read line
 do
@@ -67,11 +67,6 @@ if [[ $INSTALL_TYPE == "FULL" ]]; then
     konsave -i ~/Arch123/configs/kde.knsv
     sleep 1
     konsave -a kde
-  elif [[ $DESKTOP_ENV == "openbox" ]]; then
-    cd ~
-    git clone https://github.com/stojshic/dotfiles-openbox
-    ./dotfiles-openbox/install-titus.sh
-  fi
 fi
 
 echo -ne "

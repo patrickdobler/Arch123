@@ -1,66 +1,144 @@
 [com/solus-project/budgie-panel]
 migration-level=1
-panels=['e44d22a2-e99a-11ec-9092-00155d013412']
+panels=['e44d22a2-e99a-11ec-9092-00155d013412', '568ecbf0-ea94-11ec-a9e4-00155d013412']
+
+[com/solus-project/budgie-panel/applets/{1b34d824-ea94-11ec-a9e4-00155d013412}]
+alignment='end'
+name='Status Indicator'
+position=1
+
+[com/solus-project/budgie-panel/applets/{6a7f51ac-ea94-11ec-a9e4-00155d013412}]
+alignment='center'
+name='Icon Task List'
+position=0
 
 [com/solus-project/budgie-panel/applets/{e44f21ba-e99a-11ec-9092-00155d013412}]
 alignment='start'
 name='Budgie Menu'
 position=0
 
-[com/solus-project/budgie-panel/applets/{e450f2c4-e99a-11ec-9092-00155d013412}]
-alignment='start'
-name='Icon Task List'
-position=1
-
 [com/solus-project/budgie-panel/applets/{e457dd78-e99a-11ec-9092-00155d013412}]
 alignment='end'
 name='System Tray'
 position=0
 
-[com/solus-project/budgie-panel/applets/{e4598fa6-e99a-11ec-9092-00155d013412}]
-alignment='end'
-name='Notifications'
-position=1
-
-[com/solus-project/budgie-panel/applets/{e45b9be8-e99a-11ec-9092-00155d013412}]
-alignment='end'
-name='Status Indicator'
-position=2
-
 [com/solus-project/budgie-panel/applets/{e45d2328-e99a-11ec-9092-00155d013412}]
 alignment='end'
 name='User Indicator'
-position=3
+position=2
 
 [com/solus-project/budgie-panel/applets/{e45d7a3a-e99a-11ec-9092-00155d013412}]
-alignment='end'
+alignment='center'
 name='Clock'
-position=4
+position=0
 
 [com/solus-project/budgie-panel/applets/{e45dcbde-e99a-11ec-9092-00155d013412}]
 alignment='end'
 name='Raven Trigger'
-position=5
+position=3
+
+[com/solus-project/budgie-panel/instance/budgie-menu/{e44f21ba-e99a-11ec-9092-00155d013412}]
+enable-menu-label=false
+menu-categories-hover=false
+menu-compact=true
+menu-headers=true
+
+[com/solus-project/budgie-panel/instance/status/{1b34d824-ea94-11ec-a9e4-00155d013412}]
+spacing=6
+
+[com/solus-project/budgie-panel/instance/tray/{e457dd78-e99a-11ec-9092-00155d013412}]
+spacing=4
+
+[com/solus-project/budgie-panel/panels/{568ecbf0-ea94-11ec-a9e4-00155d013412}]
+applets=['6a7f51ac-ea94-11ec-a9e4-00155d013412']
+dock-mode=true
+enable-shadow=false
+location='left'
+size=45
+theme-regions=true
+transparency='always'
 
 [com/solus-project/budgie-panel/panels/{e44d22a2-e99a-11ec-9092-00155d013412}]
-applets=['e44f21ba-e99a-11ec-9092-00155d013412', 'e450f2c4-e99a-11ec-9092-00155d013412', 'e4598fa6-e99a-11ec-9092-00155d013412', 'e457dd78-e99a-11ec-9092-00155d013412', 'e45d7a3a-e99a-11ec-9092-00155d013412', 'e45b9be8-e99a-11ec-9092-00155d013412', 'e45d2328-e99a-11ec-9092-00155d013412', 'e45dcbde-e99a-11ec-9092-00155d013412']
-location='bottom'
+applets=['e44f21ba-e99a-11ec-9092-00155d013412', 'e457dd78-e99a-11ec-9092-00155d013412', 'e45d7a3a-e99a-11ec-9092-00155d013412', '1b34d824-ea94-11ec-a9e4-00155d013412', 'e45d2328-e99a-11ec-9092-00155d013412', 'e45dcbde-e99a-11ec-9092-00155d013412']
+enable-shadow=false
+location='top'
 size=36
-transparency='none'
+transparency='always'
+
+[com/solus-project/budgie-raven]
+enable-week-numbers=true
+show-power-strip=true
 
 [com/solus-project/budgie-wm]
+attach-modal-dialogs=true
 button-layout='appmenu:minimize,maximize,close'
 caffeine-mode=false
 center-windows=false
+show-all-windows-tabswitcher=true
+
+[com/solus-project/clock/instance/clock/{e45d7a3a-e99a-11ec-9092-00155d013412}]
+custom-format='%H:%M - %d.%m.%y'
+custom-timezone='UTC'
+show-date=false
+use-custom-format=true
+use-custom-timezone=false
+
+[org/gnome/boxes]
+first-run=false
+view='icon-view'
+window-maximized=true
+
+[org/gnome/calendar]
+active-view='month'
+window-maximized=true
+window-size=(768, 600)
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='info-overview'
 window-state=(980, 640, true)
+
+[org/gnome/desktop/a11y]
+always-show-universal-access-status=false
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/brush-strokes-l.jpg'
+picture-uri-dark='file:///usr/share/backgrounds/gnome/brush-strokes-d.jpg'
+primary-color='#3465a4'
+secondary-color='#000000'
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
 sources=[('xkb', 'ch')]
 xkb-options=@as []
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-theme='Adwaita'
+enable-animations=false
+font-hinting='slight'
+show-battery-percentage=false
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=false
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+old-files-age=uint32 30
+recent-files-max-age=-1
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/brush-strokes-l.jpg'
+primary-color='#3465a4'
+secondary-color='#000000'
+
+[org/gnome/desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
 
 [org/gnome/desktop/session]
 idle-delay=uint32 300
@@ -105,7 +183,7 @@ active-plugins=['spell', 'sort', 'openlinks', 'modelines', 'filebrowser', 'docin
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///boot/grub/themes/dark-matter'
+virtual-root='file:///home/admin'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -117,8 +195,11 @@ side-panel-size=200
 size=(900, 700)
 state=87168
 
+[org/gnome/mutter]
+attach-modal-dialogs=true
+
 [org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
+default-folder-viewer='list-view'
 search-filter-time-type='last_modified'
 search-view='list-view'
 
@@ -126,13 +207,59 @@ search-view='list-view'
 initial-size=(1546, 783)
 maximized=false
 
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=true
+
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=true
+power-button-action='suspend'
 sleep-inactive-ac-timeout=1200
 sleep-inactive-battery-timeout=1200
 
 [org/gnome/settings-daemon/plugins/xsettings]
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(23,20,33)'
+font='FiraCode Nerd Font Mono 11'
+foreground-color='rgb(208,207,204)'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+use-system-font=false
+use-theme-colors=false
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=170
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-size=(887, 327)
+
+[org/gtk/settings/color-chooser]
+custom-colors=[(0.090196078431372548, 0.078431372549019607, 0.12941176470588237, 1.0)]
+selected-color=(true, 0.090196078431372548, 0.078431372549019607, 0.12941176470588237, 1.0)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=157
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(314, 43)
+window-size=(1203, 902)
+
+[system/locale]
+region='de_CH.UTF-8'
 
 [system/proxy]
 mode='none'
