@@ -1,6 +1,9 @@
 mesa-utils
 xorg
 xorg-server
+xorg-apps
+xorg-drivers
+xorg-xkill
 xorg-xinit
 xorg-xinput
 xorg-xfontsel
@@ -8,6 +11,7 @@ xorg-xlsfonts
 xorg-xwininfo
 linux-headers
 noto-fonts-emoji
+usbutils
 xdg-user-dirs
 openssh
 htop
@@ -21,7 +25,6 @@ alsa-utils
 autoconf
 automake
 awesome-terminal-fonts
-bash-completion
 bind
 bison
 bluez
@@ -55,9 +58,7 @@ gst-libav
 gst-plugins-good
 gst-plugins-ugly
 haveged
-htop
 jdk-openjdk
-kitty
 libdvdcss
 libtool
 lsof
@@ -76,13 +77,12 @@ papirus-icon-theme
 patch
 picom
 pkgconf
-powerline-fonts
+powerline-fonts			
 python-notify2
 python-psutil
 python-pyqt5
 python-pip
 snap-pac
-snapper
 swtpm
 synergy
 terminus-font
@@ -96,9 +96,4 @@ unzip
 virt-manager
 virt-viewer
 which
-wine-gecko
-wine-mono
-winetricks
 zip
-
-

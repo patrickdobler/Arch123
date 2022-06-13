@@ -1,6 +1,5 @@
 dkms
 nvidia-dkms
-lightdm-webkit2-greeter #login_theme
 pipewire #audio
 pipewire-media-session #audio
 pipewire-pulse #audio
@@ -9,5 +8,6 @@ zsh
 zsh-syntax-highlighting
 zsh-autosuggestions
 firefox
+snapper #snapshot_tool
 --END OF MINIMAL INSTALL--
-bash-completion
+lightdm-webkit2-greeter #login_theme

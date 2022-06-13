@@ -1,39 +1,39 @@
 plasma-desktop
 sddm
 dolphin
---END OF MINIMAL INSTALL--
-ark
-audiocd-kio
-bluedevil
-breeze
-breeze-gtk
-discover
-extra-cmake-modules
-filelight
-gwenview
+ark #archiving_tool
+gwenview #image_viewer
 kate
 kde-gtk-config
 kcodecs
 kcoreaddons
 kdeplasma-addons
-kgamma5
-kgpg
-kinfocenter
 konsole
 kscreen
 kvantum-qt5
-kwalletmanager
-kwayland-integration
 layer-shell-qt
 milou
 okular
 oxygen
 plasma-nm
-plasma-pa
 plasma-wayland-session
-powerdevil
-print-manager
 spectacle
 systemsettings
 xdg-desktop-portal-kde
+--END OF MINIMAL INSTALL--
+audiocd-kio
+bluedevil #bluetooth
+breeze #cursor
+breeze-gtk #cursor
+discover #appstore
+extra-cmake-modules
+filelight
+kgamma5
+kgpg
+kinfocenter
+kwalletmanager
+kwayland-integration
+plasma-pa
+powerdevil
+print-manager
 zeroconf-ioslave
