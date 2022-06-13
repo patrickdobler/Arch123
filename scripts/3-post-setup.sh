@@ -61,6 +61,8 @@ echo -ne "
 "
 if [[ ${DESKTOP_ENV} == "kde" ]]; then
   systemctl enable sddm.service
+  echo [Theme] >>  /etc/sddm.conf
+  echo Current=Nordic >> /etc/sddm.conf
   if [[ ${INSTALL_TYPE} == "FULL" ]]; then
     echo [Theme] >>  /etc/sddm.conf
     echo Current=Nordic >> /etc/sddm.conf
