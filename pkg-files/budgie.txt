@@ -1,5 +1,0 @@
-budgie-desktop
-network-manager-applet
-gnome
-budgie-extras
---END OF MINIMAL INSTALL--

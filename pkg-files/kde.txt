@@ -1,39 +1,23 @@
-plasma-desktop
 sddm
+plasma
+plasma-wayland-session
+ark
 dolphin
-ark #archiving_tool
-gwenview #image_viewer
+celluloid
+gwenview
+kcalc
 kate
-kde-gtk-config
+kdeconnect
+konsole
+kwalletmanager
+okular
+print-manager
+spectacle
+--END OF MINIMAL INSTALL--
 kcodecs
 kcoreaddons
-kdeplasma-addons
-konsole
-kscreen
 kvantum-qt5
 layer-shell-qt
 milou
-okular
-oxygen
-plasma-nm
-plasma-wayland-session
-spectacle
-systemsettings
-xdg-desktop-portal-kde
---END OF MINIMAL INSTALL--
-audiocd-kio
-bluedevil #bluetooth
-breeze #cursor
-breeze-gtk #cursor
-discover #appstore
 extra-cmake-modules
-filelight
-kgamma5
 kgpg
-kinfocenter
-kwalletmanager
-kwayland-integration
-plasma-pa
-powerdevil
-print-manager
-zeroconf-ioslave

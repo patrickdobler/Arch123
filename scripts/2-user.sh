@@ -23,9 +23,9 @@ source $HOME/Arch123/configs/setup.conf
   cd ~
   mkdir "/home/$USERNAME/.cache"
   touch "/home/$USERNAME/.cache/zshhistory"
-  git clone "https://github.com/patrickdobler/zsh"
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-  cp ~/zsh/.zshrc ~/.zshrc
+  git clone https://github.com/patrickdobler/zsh
+  rm -rf ./zsh/.git ./zsh/README.md
+  cp -r zsh/. "/home/$USERNAME" && rm -rf zsh
 
 sed -n '/'$INSTALL_TYPE'/q;p' ~/Arch123/pkg-files/${DESKTOP_ENV}.txt | while read line
 do

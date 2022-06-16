@@ -37,7 +37,7 @@ fi
 # set kernel parameter for adding splash screen
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/& splash /' /etc/default/grub
 
-echo -e "Installing CyberRe Grub theme..."
+echo -e "Installing dark-matter grub theme..."
 THEME_DIR="/boot/grub/themes"
 THEME_NAME=dark-matter
 echo -e "Creating the theme directory..."
@@ -62,7 +62,7 @@ echo -ne "
 if [[ ${DESKTOP_ENV} == "kde" ]]; then
   systemctl enable sddm.service
   echo [Theme] >>  /etc/sddm.conf
-  echo Current=Nordic >> /etc/sddm.conf
+  echo Current=chili >> /etc/sddm.conf
   if [[ ${INSTALL_TYPE} == "FULL" ]]; then
     echo [Theme] >>  /etc/sddm.conf
     echo Current=Nordic >> /etc/sddm.conf
@@ -70,18 +70,6 @@ if [[ ${DESKTOP_ENV} == "kde" ]]; then
 
 elif [[ "${DESKTOP_ENV}" == "gnome" ]]; then
   systemctl enable gdm.service
-
-elif [[ "${DESKTOP_ENV}" == "lxde" ]]; then
-  systemctl enable lxdm.service
-
-elif [[ "${DESKTOP_ENV}" == "openbox" ]]; then
-  systemctl enable lightdm.service
-  if [[ "${INSTALL_TYPE}" == "FULL" ]]; then
-    # Set default lightdm-webkit2-greeter theme to Litarvan
-    sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = litarvan #\1/g' /etc/lightdm/lightdm-webkit2-greeter.conf
-    # Set default lightdm greeter to lightdm-webkit2-greeter
-    sed -i 's/#greeter-session=example.*/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
-  fi
 
 else
   if [[ ! "${DESKTOP_ENV}" == "server"  ]]; then
@@ -113,6 +101,8 @@ systemctl enable NetworkManager.service
 echo "  NetworkManager enabled"
 #systemctl enable bluetooth
 #echo "  Bluetooth enabled"
+#systemctl enable tlp
+#echo "  Optimize Linux Laptop Battery Life enabled"
 systemctl enable avahi-daemon.service
 echo "  Avahi enabled"
 
@@ -151,19 +141,6 @@ else
 fi
 plymouth-set-default-theme -R arch-glow # sets the theme and runs mkinitcpio
 echo 'Plymouth theme installed'
-
-echo -ne "
--------------------------------------------------------------------------
-               Remove other DE sessions
--------------------------------------------------------------------------
-"
-if [[ ${DESKTOP_ENV} == "budgie" ]]; then
-  echo 'Removing alternative gnome sessions...'
-  cd /usr/share/wayland-sessions/
-  rm gnome-classic.desktop gnome-classic-wayland.desktop gnome.desktop gnome-wayland.desktop
-  cd /usr/share/xsessions/
-  rm gnome-classic.desktop gnome-classic-xorg.desktop gnome.desktop gnome-xorg.desktop
-fi
 
 echo -ne "
 -------------------------------------------------------------------------

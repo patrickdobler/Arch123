@@ -223,7 +223,7 @@ localesetting () {
 echo -ne "
 Please select locale setting from this list (regional monetary values, time and date formats)"
 # These are default locale settings as presented in official arch repo archinstall
-options=("en_US" "de_CH")
+options=(en_US de_CH)
 
 select_option $? 1 "${options[@]}"
 localesetting=${options[$?]}
@@ -263,7 +263,7 @@ echo -ne "
 
 PS3='
 Select the disk to install on: '
-options=($(lsblk -n --output TYPE,KNAME,SIZE | awk '$1=="disk"{print "/dev/"$2"|"$3}'))
+options=("$(lsblk -n --output TYPE,KNAME,SIZE | awk '$1=="disk"{print "/dev/"$2"|"$3}')")
 
 select_option $? 1 "${options[@]}"
 disk=${options[$?]%|*}

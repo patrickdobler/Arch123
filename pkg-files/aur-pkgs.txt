@@ -1,20 +1,11 @@
-plymouth-git #boot_logo
-nerd-fonts-fira-code #zsh
-ttf-meslo #zsh
-autojump #zsh
-zsh-you-should-use
-snapper-gui-git #snapshot_tool
+plymouth-git
+nerd-fonts-fira-code
+snapper-gui-git
 nordic-darker-standard-buttons-theme
 nordic-darker-theme
 nordic-kde-git
 nordic-theme
-lightly-git #theme_qt
-lightlyshaders-git #theme_kde
-sddm-nordic-theme-git
+chili-sddm-theme
 --END OF MINIMAL INSTALL--
-lightdm-webkit2-theme-glorious #login_theme
+vmware-workstation 
 brave-bin
-bridge-utils #network_bridge
-dxvk-bin #direct3d_support
-ocs-url
-vde2

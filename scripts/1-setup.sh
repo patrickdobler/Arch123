@@ -57,7 +57,7 @@ if [[  $LOCALESETTING == "de_CH" ]]; then
 fi
 locale-gen
 timedatectl --no-ask-password set-timezone ${TIMEZONE}
-timedatectl --no-ask-password set-ntp 1
+timedatectl --no-ask-password set-ntp true
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_ADDRESS="${LOCALESETTING}.UTF-8" LC_IDENTIFICATION="${LOCALESETTING}.UTF-8" LC_MEASUREMENT="${LOCALESETTING}.UTF-8" LC_MONETARY="${LOCALESETTING}.UTF-8" LC_NAME="${LOCALESETTING}.UTF-8" LC_NUMERIC="${LOCALESETTING}.UTF-8" LC_PAPER="${LOCALESETTING}.UTF-8" LC_TELEPHONE="${LOCALESETTING}.UTF-8" LC_TIME="${LOCALESETTING}.UTF-8"
 ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 # Set keymaps
@@ -140,7 +140,7 @@ echo -ne "
 # Graphics Drivers find and install
 gpu_type=$(lspci)
 if grep -E "NVIDIA|GeForce" <<< ${gpu_type}; then
-    pacman -S --noconfirm --needed nvidia nvidia-utils
+    pacman -S --noconfirm --needed nvidia nvidia-utils nvidia-settings
 	nvidia-xconfig
 elif lspci | grep 'VGA' | grep -E "Radeon|AMD"; then
     pacman -S --noconfirm --needed xf86-video-amdgpu

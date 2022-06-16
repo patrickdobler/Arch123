@@ -1,13 +1,9 @@
-dkms
-nvidia-dkms
-pipewire #audio
-pipewire-media-session #audio
-pipewire-pulse #audio
-unrar
-zsh
-zsh-syntax-highlighting
-zsh-autosuggestions
 firefox
-snapper #snapshot_tool
+snap-pac
+exa
+ttf-droid
+ttf-hack
+ttf-roboto
+awesome-terminal-fonts
+gimp
 --END OF MINIMAL INSTALL--
-lightdm-webkit2-greeter #login_theme

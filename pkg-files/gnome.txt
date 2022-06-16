@@ -1,6 +1,0 @@
-gnome
-gnome-tweaks
-gnome-tweak-tool
-gnome-software-packagekit-plugin
---END OF MINIMAL INSTALL--
-gnome-extra
