@@ -62,11 +62,7 @@ echo -ne "
 if [[ ${DESKTOP_ENV} == "kde" ]]; then
   systemctl enable sddm.service
   echo [Theme] >>  /etc/sddm.conf
-  echo Current=chili >> /etc/sddm.conf
-  if [[ ${INSTALL_TYPE} == "FULL" ]]; then
-    echo [Theme] >>  /etc/sddm.conf
-    echo Current=Nordic >> /etc/sddm.conf
-  fi
+  echo Current=Nordic >> /etc/sddm.conf
 
 elif [[ "${DESKTOP_ENV}" == "gnome" ]]; then
   systemctl enable gdm.service
@@ -93,16 +89,14 @@ echo "  Cups enabled"
 ntpd -qg
 systemctl enable ntpd.service
 echo "  NTP enabled"
-systemctl disable dhcpcd.service
-echo "  DHCP disabled"
-systemctl stop dhcpcd.service
-echo "  DHCP stopped"
 systemctl enable NetworkManager.service
 echo "  NetworkManager enabled"
-#systemctl enable bluetooth
-#echo "  Bluetooth enabled"
-#systemctl enable tlp
-#echo "  Optimize Linux Laptop Battery Life enabled"
+if [[ "${SETNOTEBOOK}" == "true" ]]; then
+  systemctl enable bluetooth
+  echo "  Bluetooth enabled"
+  systemctl enable tlp
+  echo "  Optimize Linux Laptop Battery Life enabled"
+fi
 systemctl enable avahi-daemon.service
 echo "  Avahi enabled"
 
@@ -153,6 +147,8 @@ sed -i 's/^%wheel ALL=(ALL:ALL) NOPASSWD: ALL/# %wheel ALL=(ALL:ALL) NOPASSWD: A
 # Add sudo rights
 sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
+
+cp /home/$USERNAME/Arch123/scripts/4-manual-post-setup.sh /home/$USERNAME/Desktop
 
 rm -r $HOME/Arch123
 rm -r /home/$USERNAME/Arch123

@@ -14,10 +14,3 @@ okular
 print-manager
 spectacle
 --END OF MINIMAL INSTALL--
-kcodecs
-kcoreaddons
-kvantum-qt5
-layer-shell-qt
-milou
-extra-cmake-modules
-kgpg

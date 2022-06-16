@@ -58,7 +58,7 @@ fi
 locale-gen
 timedatectl --no-ask-password set-timezone ${TIMEZONE}
 timedatectl --no-ask-password set-ntp true
-localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_ADDRESS="${LOCALESETTING}.UTF-8" LC_IDENTIFICATION="${LOCALESETTING}.UTF-8" LC_MEASUREMENT="${LOCALESETTING}.UTF-8" LC_MONETARY="${LOCALESETTING}.UTF-8" LC_NAME="${LOCALESETTING}.UTF-8" LC_NUMERIC="${LOCALESETTING}.UTF-8" LC_PAPER="${LOCALESETTING}.UTF-8" LC_TELEPHONE="${LOCALESETTING}.UTF-8" LC_TIME="${LOCALESETTING}.UTF-8"
+localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_CTYPE="en_US.UTF-8" LC_ADDRESS="${LOCALESETTING}.UTF-8" LC_IDENTIFICATION="${LOCALESETTING}.UTF-8" LC_MEASUREMENT="${LOCALESETTING}.UTF-8" LC_MONETARY="${LOCALESETTING}.UTF-8" LC_NAME="${LOCALESETTING}.UTF-8" LC_NUMERIC="${LOCALESETTING}.UTF-8" LC_PAPER="${LOCALESETTING}.UTF-8" LC_TELEPHONE="${LOCALESETTING}.UTF-8" LC_TIME="${LOCALESETTING}.UTF-8"
 ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 # Set keymaps
 localectl --no-ask-password set-keymap ${KEYMAP} --no-convert
@@ -107,6 +107,24 @@ if [[ ! $DESKTOP_ENV == server ]]; then
   sed -n '/'$INSTALL_TYPE'/q;p' $HOME/Arch123/pkg-files/pacman-extra-pkgs.txt | while read line
   do
     if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]; then
+      # If selected installation type is FULL, skip the --END OF THE MINIMAL INSTALLATION-- line
+      continue
+    fi
+    echo "INSTALLING: ${line}"
+    sudo pacman -S --noconfirm --needed ${line}
+  done
+fi
+
+echo -ne "
+-------------------------------------------------------------------------
+                    Installing Software for Notebooks
+-------------------------------------------------------------------------
+"
+if [[ $SETNOTEBOOK == "true" ]]; then
+  sed -n '/'$INSTALL_TYPE'/q;p' ~/Arch123/pkg-files/pacman-notebook-pkgs.txt | while read line
+  do
+    if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]
+    then
       # If selected installation type is FULL, skip the --END OF THE MINIMAL INSTALLATION-- line
       continue
     fi

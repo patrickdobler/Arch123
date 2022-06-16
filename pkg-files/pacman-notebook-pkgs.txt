@@ -1,0 +1,6 @@
+bluez
+bluez-libs
+bluez-utils
+pulseaudio-bluetooth
+tlp
+--END OF MINIMAL INSTALL--

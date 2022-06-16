@@ -1,9 +1,17 @@
-firefox
-snap-pac
+awesome-terminal-fonts
 exa
+firefox
+gimp
+snap-pac
 ttf-droid
 ttf-hack
 ttf-roboto
-awesome-terminal-fonts
-gimp
 --END OF MINIMAL INSTALL--
+liquidctl
+gamemode
+bitwarden
+telegram-desktop
+kompare
+discord
+nextcloud
+notion

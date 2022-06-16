@@ -62,8 +62,6 @@ export PATH=$PATH:~/.local/bin
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
-    cp -r ~/Arch123/configs/.config/* ~/.config/
-    pip install konsave
     konsave -i ~/Arch123/configs/kde.knsv
     sleep 1
     konsave -a kde

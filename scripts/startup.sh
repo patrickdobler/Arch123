@@ -232,6 +232,24 @@ echo -ne "Your locale: ${localesetting} \n"
 set_option LOCALESETTING $localesetting
 }
 
+# @description Set notebook or computer
+setnotebook () {
+echo -ne "
+Is this device a notebook?"
+options=("Yes" "No")
+select_option $? 1 "${options[@]}"
+
+case ${options[$?]} in
+    y|Y|yes|Yes|YES)
+    echo "Set notbook to true"
+    set_option SETNOTEBOOK "true";;
+    n|N|no|NO|No)
+    echo "Set notbook to false"
+    set_option SETNOTEBOOK "false";;
+    *) echo "Wrong option. Try again";setnotebook;;
+esac
+}
+
 # @description Choose whether drive is SSD or not.
 drivessd () {
 echo -ne "
@@ -363,3 +381,6 @@ keymap
 clear
 logo
 localesetting
+clear
+logo
+setnotebook

@@ -5,7 +5,7 @@ This installation script is based on ArchTitus and was modified for own preferen
 Desktop Environment: KDE Plasma
 Display Manager: SDDM
 Grub Theme: Dark Matter - https://github.com/VandalByte/darkmatter-grub2-theme
-SDDM Theme: Chili - https://github.com/MarianArlt/sddm-chili
+SDDM Theme: Nordic - https://store.kde.org/p/1366843
 
 # ArchTitus Installer Script
 [![GitHub Super-Linter](https://github.com/ChrisTitusTech/ArchTitus/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
