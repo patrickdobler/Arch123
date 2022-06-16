@@ -16,6 +16,7 @@ This script will ask users about their prefrences like disk, file system, timezo
 * [timezone()](#timezone)
 * [keymap()](#keymap)
 * [localesetting()](#localesetting)
+* [setnotebook()](#setnotebook)
 * [drivessd()](#drivessd)
 * [diskpart()](#diskpart)
 * [userinfo()](#userinfo)
@@ -75,6 +76,10 @@ Set user's keyboard mapping.
 ## localesetting()
 
 Set user's locale settings. 
+
+## setnotebook()
+
+Set notebook or computer
 
 ## drivessd()
 
