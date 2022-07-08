@@ -62,6 +62,11 @@ export PATH=$PATH:~/.local/bin
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
+    #install window gaps
+    git clone https://github.com/nclarius/tile-gaps.git
+    cd tile-gaps
+    bash install.sh
+    #import kde config
     konsave -i ~/Arch123/configs/kde.knsv
     sleep 1
     konsave -a kde

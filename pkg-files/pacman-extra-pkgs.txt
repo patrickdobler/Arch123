@@ -1,9 +1,9 @@
 awesome-terminal-fonts
 exa
 firefox
+firefox-ublock-origin
 gimp
 snap-pac
-ttf-droid
 ttf-hack
 ttf-roboto
 --END OF MINIMAL INSTALL--

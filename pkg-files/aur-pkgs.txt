@@ -1,17 +1,10 @@
 konsave
-ulauncher
 plymouth-git
 nerd-fonts-fira-code
 snapper-gui-git
-nordic-darker-standard-buttons-theme
-nordic-darker-theme
-nordic-kde-git
-nordic-theme
-sddm-nordic-theme-git
 --END OF MINIMAL INSTALL--
 vmware-workstation 
 brave-bin
-vscodium-bin
 whatsapp-nativefier
 remote-desktop-manager-free
 onlyoffice-bin
